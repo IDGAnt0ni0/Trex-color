@@ -140,15 +140,18 @@ function draw() {
      
      obstaclesGroup.setVelocityXEach(0);
      cloudsGroup.setVelocityXEach(0);
+     
+       if(touches.length > 0 ||mousePressedOver(restart)){
+        reset();
+        touches = [];
+  }
    }
   
  
   //stop trex from falling down
   trex.collide(invisibleGround);
   
-  if(mousePressedOver(restart)){
-    reset();
-  }
+
   
   drawSprites();
 }
